@@ -10,13 +10,13 @@ namespace Senai.Tarefas.Web.Mvc.Controllers
     public class UsuarioController : Controller
     {
         [HttpGet]
-        public ActionResult Cadastrar()
+        public IActionResult Cadastrar()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(IFormCollection form)
+        public IActionResult Cadastrar(IFormCollection form)
         {
             // Cria um objeto usuario com as propriedades da classe UsuarioModel
             UsuarioModel usuario = new UsuarioModel();
