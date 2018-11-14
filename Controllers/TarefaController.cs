@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Tarefas.Web.Mvc.Models;
@@ -35,7 +36,7 @@ namespace Senai.Tarefas.Web.Mvc.Controllers
             tarefa.Tipo = form["tipo"];
             tarefa.DataCriacao = DateTime.Now;
 
-            using(StreamWriter sw = new StreamWriter("tarefas.csv",true))
+            using(StreamWriter sw = new StreamWriter(new FileStream("tarefas.csv",FileMode.Append, FileAccess.Write), Encoding.UTF8))
             {
                 sw.WriteLine($"{tarefa.ID};{tarefa.Nome};{tarefa.Descricao};{tarefa.Tipo};{tarefa.IDUsuario};{tarefa.DataCriacao}");
             }

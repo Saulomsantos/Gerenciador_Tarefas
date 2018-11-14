@@ -1,0 +1,27 @@
+<h1>Formulário de Cadastro de Tarefa</h1>
+
+<form action="/Tarefa/Cadastrar" method="POST">
+    <label>
+        Nome
+        <input type="text" name="nome" required="true">
+    </label>
+
+    <label>
+        Descrição
+        <input type="text" name="descricao" required="true">
+    </label>
+
+    <label>
+        Tipo
+        <select name="tipo">
+            <option value="">Selecione</option>
+            <option value="para fazer">Para fazer</option>
+            <option value="fazendo">Fazendo</option>
+            <option value="feito">Feito</option>
+        </select>
+    </label>
+
+    <input type="submit" value="Cadastrar">
+</form>
+
+@ViewBag.Mensagem
