@@ -1,0 +1,31 @@
+<h1>Formulário de Cadastro de Usuário</h1>
+
+<form action="/Usuario/Cadastrar" method="POST">
+    <label>
+        Nome
+        <input type="text" name="nome" required="true">
+    </label>
+
+    <label>
+        Email
+        <input type="email" name="email" required="true">
+    </label>
+
+    <label>
+        Senha
+        <input type="password" name="senha" required="true">
+    </label>
+
+    <label>
+        Tipo
+        <select name="tipo">
+            <option value="">Selecione</option>
+            <option value="admin">Administrador</option>
+            <option value="usuario">Usuário</option>
+        </select>
+    </label>
+
+    <input type="submit" value="Cadastrar">
+</form>
+
+@ViewBag.Mensagem
